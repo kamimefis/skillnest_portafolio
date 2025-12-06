@@ -146,6 +146,20 @@
             Proyectos
           </button>
         </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link px-4"
+            id="stack-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#stack-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="stack-tab-pane"
+            aria-selected="false"
+          >
+            Stack
+          </button>
+        </li>
       </ul>
     </header>
 
@@ -192,8 +206,7 @@
           class="tab-pane fade h-100"
           id="proyectos-tab-pane"
           role="tabpanel"
-          aria-labelledby="proyectos-tab"
-        >
+          aria-labelledby="proyectos-tab">
           <h2 class="mb-4">Mis proyectos</h2>
 
           <div
@@ -233,14 +246,20 @@
               <div class="carousel-item active">
                 <h5 class="titulo-proyecto">Foto astronómica del día</h5>
                 <img
-                  src="./img/nasa-apod.png"
+                  src="./img/nasa_pic.png"
                   class="img-thumbnail mb-3 d-block mx-auto"
                   alt="Proyecto Foto astronómica del día"
                 />
                 <p>
-                  Usando la API de la NASA, esta app permite consultar la foto
+                  Esta app permite consultar la foto
                   astronómica del día según la fecha seleccionada.
                 </p>
+                <div class="d-flex flex-column align-items-center mb-3">
+                  <a href="https://nasa-apod-api.onrender.com/" target="_blank"
+                  class="fw-bold text-decoration-none"><strong>Enlace al Proyecto</strong></a>
+                  <a href="https://github.com/kamimefis/nasa_apod_api" target="_blank"
+                  class="fw-bold text-decoration-none">Enlace a GitHub</a>
+                </div>
               </div>
 
               <!-- Proyecto 2 -->
@@ -255,19 +274,20 @@
                   Aplicación que muestra la variación de instrumentos bursátiles
                   entre 06-11-2023 y 06-11-2024.
                 </p>
+                <div class="d-flex flex-column align-items-center mb-3">
                 <a
                   href="https://github.com/kamimefis/Ipsa-Vue-Project"
                   target="_blank"
-                  class="fw-bold"
-                  >Enlace a GitHub</a
-                >
+                  class="fw-bold text-decoration-none"
+                  >Enlace a GitHub</a>
+                </div>
               </div>
 
               <!-- Proyecto 3 -->
               <div class="carousel-item">
                 <h5 class="titulo-proyecto">Movie Fight</h5>
                 <img
-                  src="./img/movie_fight.png"
+                  src="./img/movieFight.png"
                   class="img-thumbnail mb-3 d-block mx-auto"
                   alt="Proyecto Movie Fight"
                 />
@@ -275,12 +295,14 @@
                   App para comparar dos películas según premios, calificación
                   IMDb y otros criterios.
                 </p>
+                <div class="d-flex flex-column align-items-center mb-3">
                 <a
-                  href="https://github.com/kamimefis/Movie_Fight"
+                  href="https://github.com/kamimefis/MovieFight"
                   target="_blank"
-                  class="fw-bold"
+                  class="fw-bold text-decoration-none"
                   >Enlace a GitHub</a
                 >
+                </div>
               </div>
             </div>
 
@@ -304,15 +326,36 @@
             </button>
           </div>
         </div>
+        <div
+          class="tab-pane fade h-100"
+          id="stack-tab-pane"
+          role="tabpanel"
+          aria-labelledby="stack-tab"
+        >
+        <div class="container mt-5">
+          <h2 class="text-center mb-4">Stack Tecnológico</h2>
+          <div class="d-flex flex-wrap gap-2 justify-content-center" id="stack-container"></div>
+        </div>
       </div>
     </main>
-
-    <footer class="text-center mt-5 mb-4">
-      <small class="text-muted">
-        © Camila Lobos
-      </small>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const tecnologias = [
+        'Django', 'Flask', 'JavaScript', 'React', 'Vue', 'MySQL', 'PostgreSQL', 'Git'
+      ];
+
+      const container = document.getElementById("stack-container");
+
+      tecnologias.forEach(tech => {
+        const card = document.createElement("div");
+        card.className = "badge text-bg-primary p-3 fs-6";
+        card.textContent = tech;
+        container.appendChild(card);
+      });
+
+    });
+  </script>
